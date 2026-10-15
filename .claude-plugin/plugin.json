@@ -1,0 +1,8 @@
+{
+  "name": "design-stack",
+  "version": "0.1.1",
+  "description": "poteto's pstack method applied to the design process: a /design-mode router, SDLC-phase design playbooks, and design principles grounded in GOV.UK, WCAG 2.2, ISO 9241, NN/g, and DTCG, with evidence instead of opinion.",
+  "author": { "name": "mp3wizard" },
+  "license": "MIT",
+  "keywords": ["design", "ux", "design-process", "accessibility", "design-system", "heuristics", "pstack", "design-mode"]
+}

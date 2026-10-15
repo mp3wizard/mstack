@@ -1,0 +1,19 @@
+### Design system component
+
+**You own the component from evidence of need to definition of done. Reuse beats new.**
+
+1. Prove the need first (**principle-as-little-design-as-possible**). Apply the five GOV.UK contribution criteria. A component must be useful, unique, usable, consistent, and versatile. Useful needs evidence that several teams or services would use it, such as one-off builds already in the code. A replacement must show evidence that it is better.
+2. Reuse before new. Search the code's components and the Figma libraries. A variant of an existing component beats a new one. If no need is proven, stop and say so.
+3. Model it. Name the object it shows, its content slots, its props, and its actions in the users' terms (**principle-model-the-objects**).
+4. Use tokens only. Every color, type, spacing, radius, and motion value is an existing token. A missing one becomes a proposed token in DTCG 2025.10 format, with `$value`, `$type`, and `$description`, aliasing existing tokens by curly-brace path (**principle-encode-decisions-in-the-system**).
+5. Design every state. Cover the interaction states in **principle-design-every-state** and, where it holds data, its data states. Add worst-case content, overflow, and reflow at 320 CSS px (SC 1.4.10, AA).
+6. Take the keyboard model and roles from the matching WAI-ARIA APG pattern (**principle-accessible-by-default**). Prefer native HTML. A role promises its widget's full behavior, and wrong ARIA is worse than none. If no pattern fits, build from native elements and say so.
+7. Build the contrast matrix. Compute every foreground and background pair per state and theme with `scripts/contrast.py`. Text needs 4.5:1 and large text 3:1 (SC 1.4.3, AA). Boundaries and state indicators need 3:1 (SC 1.4.11, AA). Targets need 24 by 24 CSS px or a listed exception (SC 2.5.8, AA).
+8. Write the usage docs with design:design-system if installed, otherwise as a markdown page beside the component (**principle-minimize-cognitive-load**).
+9. Meet the definition of done (**principle-prove-it-with-evidence**). Carbon marks a component Stable only when its spec, code, tests, and Figma kit all meet the bar. The spec uses only tokens and covers every state and behavior. The code has no magic numbers, uses parameterized strings, and holds down to about 320 px. Tests include visual regression on the default story, automated accessibility checks, and a manual screen reader pass. That pass is a human step. Record it as `pending: user evidence for <question>` until a person runs it. Build the kit with figma:figma-generate-library and map it to code with figma:figma-code-connect, loading figma:figma-use first, if installed. Otherwise list the kit as an open item.
+10. Set the lifecycle status on the project's ladder, such as Carbon's Draft, Preview candidate, Preview, Stable, or USWDS's Proposal, Development, Released, Deprecated. Publishing to a shared library pauses for a human (**principle-deprecate-through-a-lifecycle**).
+11. Run **Design handoff** (playbooks/design-handoff.md).
+
+**Reply:** the evidence of need, what you reused, the tokens with any proposed ones, the state and contrast matrix, the APG pattern, the definition-of-done status per item, and the lifecycle status.
+
+**Grounded in:** [GOV.UK Design System contribution criteria](https://design-system.service.gov.uk/community/contribution-criteria/) (OGL v3.0, adapted), [Carbon component checklist](https://www.carbondesignsystem.com/getting-started/contributing/component-checklist) (IBM, Apache-2.0 via the carbon-website repo, paraphrased), [DTCG Format Module 2025.10](https://www.designtokens.org/tr/2025.10/format/), [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/), [USWDS component lifecycle](https://designsystem.digital.gov/components/lifecycle/).
