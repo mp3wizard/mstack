@@ -1,10 +1,10 @@
 {
-  "name": "design-stack",
+  "name": "mstack",
   "owner": { "name": "mp3wizard" },
-  "metadata": { "description": "design-stack: rigorous, evidence-backed design-process workflows for Claude Code" },
+  "metadata": { "description": "mstack: rigorous, evidence-backed design-process workflows for Claude Code" },
   "plugins": [
     {
-      "name": "design-stack",
+      "name": "mstack",
       "source": "./",
       "description": "/design-mode router, SDLC-phase design playbooks, and handbook-grounded design principles"
     }

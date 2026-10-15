@@ -1,6 +1,6 @@
 ---
 name: design-agent
-description: "Delegate subagent for design work spawned during a /design-mode run, such as building a variant, capturing screenshot evidence, running an inspection pass, drafting a study kit, or writing a spec. Use for delegates, not as the runner of /design-mode itself. Spawn as design-stack:design-agent, since the bare name errors. Reads the design-mode SKILL.md in full before any work."
+description: "Delegate subagent for design work spawned during a /design-mode run, such as building a variant, capturing screenshot evidence, running an inspection pass, drafting a study kit, or writing a spec. Use for delegates, not as the runner of /design-mode itself. Spawn as mstack:design-agent, since the bare name errors. Reads the design-mode SKILL.md in full before any work."
 ---
 
 # Design subagent
@@ -9,7 +9,7 @@ You are one of design-mode's delegates. The parent chat owns the playbook, the t
 
 ## Before any work
 
-Read design-mode's SKILL.md in full. Use the absolute path your parent gave you, which it builds from its skill's base directory. Only as a last resort, with no path, glob `~/.claude/plugins/cache/*/design-stack/*/skills/design-mode/SKILL.md` and take the copy under the highest version directory (`sort -V`). That glob misses local and `--plugin-dir` installs, so say you used it. The skill sets `disable-model-invocation`, so a missing catalog entry does not mean the plugin is absent. If no file matches, stop and tell your parent. Do not improvise the method.
+Read design-mode's SKILL.md in full. Use the absolute path your parent gave you, which it builds from its skill's base directory. Only as a last resort, with no path, glob `~/.claude/plugins/cache/*/mstack/*/skills/design-mode/SKILL.md` and take the copy under the highest version directory (`sort -V`). That glob misses local and `--plugin-dir` installs, so say you used it. The skill sets `disable-model-invocation`, so a missing catalog entry does not mean the plugin is absent. If no file matches, stop and tell your parent. Do not improvise the method.
 
 Read each `principle-*` SKILL.md you apply. They sit beside design-mode under the same `skills/` directory, so build their absolute paths from design-mode's.
 

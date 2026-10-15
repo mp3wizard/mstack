@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Structural checks for the design-stack plugin.
+"""Structural checks for the mstack plugin.
 
 Fails (exit 1) when:
   - the router and the playbook/principle files disagree,

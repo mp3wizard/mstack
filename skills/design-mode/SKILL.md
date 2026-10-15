@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 # Design mode
 
-Bundled skills live at `../<name>/SKILL.md` from this file. Playbooks live at `playbooks/<slug>.md` and scripts at `scripts/`. Every `design-stack:design-agent` prompt gets this file's absolute path, built from the skill's base directory.
+Bundled skills live at `../<name>/SKILL.md` from this file. Playbooks live at `playbooks/<slug>.md` and scripts at `scripts/`. Every `mstack:design-agent` prompt gets this file's absolute path, built from the skill's base directory.
 
 ## Non-negotiables
 
@@ -109,7 +109,7 @@ Before routing a step, check your available skills and agents. Use a delegate wh
 
 ## Subagents
 
-**Use `subagent_type: "design-stack:design-agent"` for any subagent you spawn inside a playbook step.** The plugin namespace is required. The bare name errors. Pass this file's absolute path in the prompt. A step that names its own `subagent_type` (heuristic-review's codex seat, design-qa's `design-stack:ui-slop-sicko`) keeps it. The chat that receives `/design-mode` runs the playbook. Never spawn a design-agent to run the playbook itself. The **critique** and **diverge** skills set their own subagents for model diversity. Respect what they prescribe.
+**Use `subagent_type: "mstack:design-agent"` for any subagent you spawn inside a playbook step.** The plugin namespace is required. The bare name errors. Pass this file's absolute path in the prompt. A step that names its own `subagent_type` (heuristic-review's codex seat, design-qa's `mstack:ui-slop-sicko`) keeps it. The chat that receives `/design-mode` runs the playbook. Never spawn a design-agent to run the playbook itself. The **critique** and **diverge** skills set their own subagents for model diversity. Respect what they prescribe.
 
 **Defaults for every `Agent` call.** `run_in_background: true` for fan-outs, file pointers instead of inlined context, and a separate scratch directory per variant so no two agents write the same file. Pick the model by role with the `model` aliases: `opus` for judgment, critique leads, and synthesis; `sonnet` for producing variants, kits, and specs; `haiku` for mechanical batches such as screenshot sweeps. Omit `model` to inherit the session model.
 

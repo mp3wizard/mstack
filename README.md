@@ -1,19 +1,21 @@
-# design-stack
+# mstack
+
+The m is for mp3wizard, the way the p in pstack is for poteto.
 
 poteto's [pstack](https://github.com/cursor/plugins/tree/main/pstack) method, applied to the design process.
 
-pstack makes a coding agent work like a senior engineer. It routes each task to a playbook, copies the playbook's steps into the todo list, grounds every decision in a named principle, and proves the work on the real artifact. design-stack keeps that method and swaps the grounding. Its playbooks follow the design phases of the SDLC, and its principles come from design handbooks: the GOV.UK Service Manual, the Design Council's Double Diamond, ISO 9241, WCAG 2.2, Nielsen Norman Group, the W3C design-token format, and more.
+pstack makes a coding agent work like a senior engineer. It routes each task to a playbook, copies the playbook's steps into the todo list, grounds every decision in a named principle, and proves the work on the real artifact. mstack keeps that method and swaps the grounding. Its playbooks follow the design phases of the SDLC, and its principles come from design handbooks: the GOV.UK Service Manual, the Design Council's Double Diamond, ISO 9241, WCAG 2.2, Nielsen Norman Group, the W3C design-token format, and more.
 
 ## Install
 
 From a local clone:
 
 ```bash
-claude plugin marketplace add /path/to/design-stack
+claude plugin marketplace add /path/to/mstack
 ```
 
 ```bash
-claude plugin install design-stack@design-stack
+claude plugin install mstack@mstack
 ```
 
 ## Use
@@ -36,7 +38,7 @@ The router picks a playbook, opens a todo list with its steps, and runs the prin
 
 ## How it differs from pstack
 
-Design frameworks gate on evidence from real users, and an agent cannot recruit participants. design-stack splits evidence into three tiers:
+Design frameworks gate on evidence from real users, and an agent cannot recruit participants. mstack splits evidence into three tiers:
 
 1. **Inspection.** The agent runs it now: heuristic review, WCAG checks, computed contrast, screenshots, state coverage. Findings are hypotheses.
 2. **Existing evidence.** Past research and analytics already in the project. Cited, never extended.

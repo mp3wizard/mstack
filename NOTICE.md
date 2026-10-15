@@ -2,7 +2,7 @@
 
 ## pstack
 
-design-stack adapts the structure and method of pstack (router skill, playbooks copied into the todo list, principle leaf skills, the reply-writing rules, and the delegate and sicko agent shapes). pstack is distributed under this license:
+mstack adapts the structure and method of pstack (router skill, playbooks copied into the todo list, principle leaf skills, the reply-writing rules, and the delegate and sicko agent shapes). pstack is distributed under this license:
 
 ```
 MIT License

@@ -9,7 +9,7 @@ Use it for a new or changed flow. Start from the **Discovery** (playbooks/discov
 3. Inventory the state matrix. Rows are screens or components by state. States are the UI Stack's ideal, empty, partial, error, and loading, plus the interaction states in **principle-design-every-state** wherever a control has them. Add recovery, undo, and destructive confirmation (**principle-design-for-error-and-reversal**). Columns are viewports. Every cell starts pending.
 4. Write the throughput checkpoint as four todo items. A dimension that does not apply keeps its item with `n/a: <reason>`.
    - **Blocking first steps.** Objects, flows, and tokens settle before variant work fans out.
-   - **Parallel workstreams.** Independent flows or screens go to separate design-stack:design-agent subagents.
+   - **Parallel workstreams.** Independent flows or screens go to separate mstack:design-agent subagents.
    - **Shared files.** One owner per shared component, token file, or Figma page. Split the target before you serialize writes to it.
    - **Smallest safe decomposition.** If one owner is best, say why.
 5. Diverge on the riskiest screen or interaction with the **diverge** skill (**principle-diverge-then-converge**). Variants sit behind one switcher.

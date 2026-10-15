@@ -1,4 +1,4 @@
-# Handbook map: pstack to design-stack
+# Handbook map: pstack to mstack
 
 This document answers two questions:
 
@@ -26,7 +26,7 @@ Totals: 148 sources and 197 claims recorded. 182 claims were checked with Jev (`
 
 ## What carries over unchanged
 
-The method layer of pstack is domain-neutral. design-stack keeps it as is:
+The method layer of pstack is domain-neutral. mstack keeps it as is:
 
 - A router skill (`/design-mode`) matches the task to a playbook and copies the playbook's steps into the todo list verbatim. A skipped step stays in the list with `skip: <reason>`.
 - Principles are leaf skills. The reply names each principle that changed a decision, and the specific choice it changed. poteto calls this the durable core of pstack, and it carries over to design as "name the heuristic".
@@ -34,11 +34,11 @@ The method layer of pstack is domain-neutral. design-stack keeps it as is:
 - Delegate subagents get file pointers, not inlined context, and the lead reviews their output instead of passing it through.
 - Replies are short declarative sentences framed for the consumer and the maintainer.
 
-## The one real conflict, and how design-stack resolves it
+## The one real conflict, and how mstack resolves it
 
 pstack's principle `never-block-on-the-human` says: if you can observe the answer by running something, don't ask. Every design-process framework in the research gates on evidence from real users (GOV.UK phases, ISO 9241-210, the Double Diamond, Lean UX). An agent cannot recruit participants, and designers in the community signal keep taste and quality sign-off for themselves.
 
-ISO 9241-210 separates inspection-based evaluation from user-based testing. design-stack uses that split to define three evidence tiers:
+ISO 9241-210 separates inspection-based evaluation from user-based testing. mstack uses that split to define three evidence tiers:
 
 | Tier | Who produces it | Examples | Can it prove usability? |
 |---|---|---|---|
@@ -71,7 +71,7 @@ poteto-mode delegates `deslop` and `control-ui` to `cursor-team-kit` instead of 
 | Vercel `web-design-guidelines` (vercel-labs/agent-skills) | Not installed | MIT | File:line UI review against the Web Interface Guidelines | The only agent-native ruleset with MUST/SHOULD/NEVER rules. Fetches rules fresh. |
 | `accessibility-agents` (Community-Access) | Not installed | MIT | WCAG 2.2 audits with specialist agents | Installs an edit-gate hook. Read it before enabling. |
 | `web-quality-skills` (addyosmani) | Not installed | MIT | Core Web Vitals, Lighthouse, accessibility checks | |
-| `design-review` agent (OneRedOak/claude-code-workflows) | Not installed | MIT | Seven-phase live-browser design review at three viewports | Targets WCAG 2.1. design-stack's design-qa playbook adapts it to 2.2. |
+| `design-review` agent (OneRedOak/claude-code-workflows) | Not installed | MIT | Seven-phase live-browser design review at three viewports | Targets WCAG 2.1. mstack's design-qa playbook adapts it to 2.2. |
 
 Install commands for the missing ones live in the README.
 
@@ -125,7 +125,7 @@ Each principle and playbook cites these. How we may use each one depends on its 
 
 Legend. **Replace**: a design playbook takes its slot. **Adapt**: same playbook, design-grounded steps. **Route**: domain-neutral harness work, use pstack's playbook when pstack is installed. **Drop**: no design meaning.
 
-| pstack playbook | Decision | design-stack playbook | Grounded in |
+| pstack playbook | Decision | mstack playbook | Grounded in |
 |---|---|---|---|
 | investigation | Replace | `discovery` (problem framing, evidence inventory, regimes, go or no-go) and `investigation` (read-only "how does this flow work, why was it designed so") | GOV.UK discovery, Double Diamond Discover and Define, 18F, JTBD |
 | bug-fix | Replace | `ux-defect-fix`: reproduce on the real surface, classify slip vs mistake, fix the signifier, mapping, or constraint, re-run the same task | Norman ch. 5, NN/g heuristics, ISO 9241-110 |
@@ -153,7 +153,7 @@ Legend. **Replace**: a design playbook takes its slot. **Adapt**: same playbook,
 
 ## Mapping: principles
 
-| pstack principle | Decision | design-stack principle |
+| pstack principle | Decision | mstack principle |
 |---|---|---|
 | attack-the-premise | Replace | `principle-frame-the-problem` |
 | exhaust-the-design-space | Replace | `principle-diverge-then-converge` |
@@ -181,7 +181,7 @@ Legend. **Replace**: a design playbook takes its slot. **Adapt**: same playbook,
 
 ## Mapping: workflow skills and agents
 
-| pstack | design-stack |
+| pstack | mstack |
 |---|---|
 | `interrogate` (multi-model adversarial review) | `critique`: independent lens reviewers (heuristics, accessibility, cognition and laws, conventions and system consistency, content, ethics), diverse models including Codex when installed, findings stated as problems against objectives with a heuristic or criterion ID and evidence |
 | `arena` | `diverge`: N variants behind one switcher, cross-judge, pick a base, graft |
@@ -255,4 +255,4 @@ pstack is installed from the Cursor source as `pstack@pstack-local`. `claude plu
 - `deslop`, `control-ui`, and `control-cli` come from `cursor-team-kit`, which is not installed.
 - Plugin agents register under the plugin namespace on Claude Code (`pstack:poteto-agent`). The bare name errors.
 
-`michael-denyer/pstack-claude` (MIT) is a maintained Claude Code port that translates these primitives. Prefer it when you want pstack itself on Claude Code. design-stack avoids all of these by using Claude Code primitives directly.
+`michael-denyer/pstack-claude` (MIT) is a maintained Claude Code port that translates these primitives. Prefer it when you want pstack itself on Claude Code. mstack avoids all of these by using Claude Code primitives directly.
