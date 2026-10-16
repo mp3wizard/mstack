@@ -8,19 +8,27 @@ pstack makes a coding agent work like a senior engineer. It routes each task to 
 
 ## Install
 
-From a local clone:
+From GitHub. The repo is its own marketplace, so there is nothing to register.
 
 ```bash
-claude plugin marketplace add /path/to/mstack
+claude plugin marketplace add mp3wizard/mstack
 ```
 
 ```bash
 claude plugin install mstack@mstack
 ```
 
+Restart Claude Code afterwards so the skills and agents load.
+
+To work on it locally, clone the repo and add the clone as the marketplace:
+
+```bash
+claude plugin marketplace add /path/to/mstack
+```
+
 ## Use
 
-Restart Claude Code after installing so the skills and agents load. Then start any rigorous design task with `/mstack:design-mode` followed by the task:
+Start any rigorous design task with `/mstack:design-mode` followed by the task:
 
 ```
 /mstack:design-mode our checkout drop-off is high on mobile. figure out why and propose a fix.
