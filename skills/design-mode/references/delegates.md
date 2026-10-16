@@ -17,5 +17,6 @@ This table names third-party skills and their known defects, so it goes stale. C
 | UI implementation rules by file and line | Vercel `web-design-guidelines` | Not bundled. Install from `vercel-labs/agent-skills`. |
 | WCAG 2.2 audits by specialist agents | Community-Access `accessibility-agents` | Not bundled. It installs an edit-gate hook. |
 | Screenshots and live interaction | The built-in browser, the Playwright MCP, or the `run` skill | Use one fixed environment for every screenshot you compare. |
+| Routing second opinion, claim checks, finding and source ranking | `jev` (TypeSafe Jev, shipped by the research-team plugin) | Optional. Follow `references/jev.md` for privacy and fallback. Never send client data. |
 | A different model family's opinion | The `codex-bridge:codex-second-opinion` agent | Agreement across families is high signal. |
 

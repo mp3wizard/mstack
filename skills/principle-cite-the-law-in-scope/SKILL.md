@@ -35,6 +35,8 @@ Research-number folk forms (5 users, SUS, sample sizes, HEART, ODI) are correcte
 - **Flag stale versions.** Move WCAG 2.1 targets to 2.2 and unversioned token files to DTCG 2025.10. When a law pins an older version, name both the legal floor and the current standard.
 - **Laws of UX is an index.** Follow it to the primary source and write the scope in your own words. Never copy its one-liners.
 
+- **Check it before it ships.** Run `jev check` on each load-bearing number, criterion ID, and law definition against the passage in the design-handbook references, per ../design-mode/references/jev.md (section 2). `contradicted` means use the reference. `unsupported` or a non-empty `numbers_missing` means label the claim unverified. No `jev` on PATH → read the passage yourself and say the check was manual.
+
 **Why:** A cited rule can be checked. A folk rule sounds authoritative and is wrong in ways nobody notices until the design fails.
 
 ## Grounded in

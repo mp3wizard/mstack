@@ -70,6 +70,17 @@ Paste a figma.com link into the task. design-mode reads the file through whichev
 
 Figma stays read-only unless you ask for a write. If neither server is connected, export the frames and attach them. The routing table is `skills/design-mode/references/figma.md`.
 
+### Jev judgments (optional)
+
+When the `jev` command is on PATH (it ships with the research-team plugin and needs `TYPESAFE_API_KEY`), design-mode uses TypeSafe's Jev model as a check beside its own reading in four places:
+
+- **Routing.** `scripts/route.py` ranks the playbooks for an unclear task and names one only when it clearly leads. Close calls go back to the router.
+- **Claim checks.** Each load-bearing number, WCAG criterion, or law definition is checked with `jev check` against the handbook reference before the reply goes out.
+- **Critique ranking.** Long finding lists from the critique skill are ranked against the agreed objectives with `jev rank`. Nothing is dropped.
+- **Source triage.** Research hits are ranked before reading, and each claim taken from a new source is checked against its text.
+
+Jev calls send text to api.typesafe.ai, so mstack never sends links, Figma file keys, client names, or participant data. Without `jev`, these steps are skipped and the reply says so. Details are in `skills/design-mode/references/jev.md`.
+
 ### Scripts you can run yourself
 
 ```bash

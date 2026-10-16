@@ -1,0 +1,19 @@
+discovery | The user is starting a new problem or feature idea and needs to understand the problem, users, and evidence before deciding whether to build anything.
+investigation | The user wants to find out why something happened or how an existing design works, such as why a conversion or completion rate dropped, without changing the design yet.
+ai-feature-design | The user is designing a feature powered by AI or an agent and needs to decide whether AI helps and how it behaves when it is wrong.
+feature-design | The user wants a new or changed screen, flow, or feature designed.
+prototype | The user wants a quick throwaway prototype or mockup to compare options and settle a design decision.
+design-sprint | The user wants to run a time-boxed multi-day design sprint from mapping the problem to testing a prototype.
+content-design | The user wants interface text written or reviewed: labels, buttons, error messages, help text, or microcopy.
+heuristic-review | The user wants an expert inspection of an existing interface against usability heuristics, without real users.
+interview-study | The user wants to plan or analyze interviews with real people to learn about their needs, behavior, and context.
+usability-test | The user wants to plan or analyze a usability test where real people try tasks on a design, or to report a usability score such as SUS.
+accessibility-audit | The user wants a design or page checked for accessibility, WCAG conformance, contrast, keyboard, or screen reader support.
+deceptive-pattern-audit | The user wants flows checked for dark patterns or manipulative design, such as hard cancellation, hidden costs, or forced consent.
+ux-defect-fix | The user reports a specific usability problem or bug in the interface and wants it reproduced and fixed.
+metric-hillclimb | The user wants to steadily improve one UX metric over many iterations or experiments.
+design-system-component | The user wants a new reusable component added to the design system.
+design-system-refactor | The user wants the design system cleaned up: inconsistent tokens, duplicate components, or deprecating old components.
+design-handoff | The user wants a finished design packaged and specified for developers to build.
+design-qa | The user wants the built product compared against the design to find visual and behavior mismatches.
+measure | The user wants to define success metrics before building, or read the results after launch.

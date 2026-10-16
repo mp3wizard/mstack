@@ -59,7 +59,7 @@ Delegates, when installed, run as extra seats. Treat each as one more reviewer, 
 
 ## Step 4, Synthesize
 
-Parse every finding. Merge findings that describe the same problem in different words. Record which seats and models raised each.
+Parse every finding. Merge findings that describe the same problem in different words. Record which seats and models raised each. With more than about ten findings, rank them against the stated objectives with `jev rank` per ../design-mode/references/jev.md (section 3) and read from the top. Jev reorders and never drops.
 
 - Agreement across same-family seats is corroboration, not independent confirmation. Agreement between seat G and a lens seat crosses model families and ranks highest. Report agreement only as seat counts, never as evaluator counts.
 - A finding from one seat is read and weighted lower. Mark its severity single-rater.

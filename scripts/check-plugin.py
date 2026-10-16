@@ -179,6 +179,13 @@ def check_structure(errors):
         fm = frontmatter(md.read_text())
         if fm.get("name") != md.stem or not fm.get("description"):
             errors.append(f"agents/{md.name}: frontmatter name must equal filename and have a description")
+    routes = SKILLS / "design-mode" / "references" / "routes.txt"
+    if routes.exists():
+        route_slugs = {l.split(" | ", 1)[0].strip() for l in routes.read_text().splitlines() if " | " in l}
+        for s in sorted(playbook_files - route_slugs):
+            errors.append(f"routes.txt has no intent line for playbooks/{s}.md")
+        for s in sorted(route_slugs - playbook_files):
+            errors.append(f"routes.txt names missing playbook {s}")
     if not skill_dirs:
         errors.append("no skills found")
 

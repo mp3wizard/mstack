@@ -23,7 +23,7 @@ Name the source, the item ID, and the version or date. Use the IDs in [lenses.md
 - ISO110-6 Use error robustness (ISO 9241-110:2020 clause 5.6).
 - Fitts's law, Shannon formulation (MacKenzie).
 
-Link the source this handbook gives. Inspection findings name the heuristic or criterion they break and stay labeled as hypotheses until users confirm them. Rate severity on the one 0 to 4 scale in [references/heuristics.md](references/heuristics.md#severity-ratings).
+Link the source this handbook gives. Before a number, criterion ID, or law definition from here goes into a reply, check it with `jev check` against the reference file it came from, per ../design-mode/references/jev.md. When you add a new outside source to a reference, triage the search hits with `jev rank` and check the claim against the fetched text first. Inspection findings name the heuristic or criterion they break and stay labeled as hypotheses until users confirm them. Rate severity on the one 0 to 4 scale in [references/heuristics.md](references/heuristics.md#severity-ratings).
 
 ## License tiers
 
