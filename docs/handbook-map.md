@@ -58,7 +58,7 @@ The rules that follow from this:
 
 poteto-mode delegates `deslop` and `control-ui` to `cursor-team-kit` instead of re-implementing them. design-mode does the same with these skills. The router names them per playbook step and falls back to its own instructions when one is missing.
 
-| Skill | Status on this machine | License | Use it for | Caveat |
+| Skill | Status when this plugin was built | License | Use it for | Caveat |
 |---|---|---|---|---|
 | `impeccable` (pbakaus/impeccable) | Installed (user's fork, 4.5.0) | Apache-2.0 | Critique, polish, anti-slop detector, live iteration | Its detector is evidence, not proof. Inspect the rendered UI too. |
 | `design:*` (anthropics/knowledge-work-plugins/design) | Installed (1.2.0) | Apache-2.0 | Critique, handoff template, user-research and synthesis scaffolds, UX copy | Its accessibility-review quick reference labels SC 2.5.5 (44x44) as AA. It is AAA. Cite WCAG directly for levels. |
