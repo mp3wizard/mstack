@@ -3,7 +3,7 @@
 **You own the component from evidence of need to definition of done. Reuse beats new.**
 
 1. Prove the need first (**principle-as-little-design-as-possible**). Apply the five GOV.UK contribution criteria. A component must be useful, unique, usable, consistent, and versatile. Useful needs evidence that several teams or services would use it, such as one-off builds already in the code. A replacement must show evidence that it is better.
-2. Reuse before new. Search the code's components and the Figma libraries. A variant of an existing component beats a new one. If no need is proven, stop and say so.
+2. Reuse before new. Search the code's components and the Figma libraries (`search_design_system` or `figma_search_components`, per references/figma.md). A variant of an existing component beats a new one. If no need is proven, stop and say so.
 3. Model it. Name the object it shows, its content slots, its props, and its actions in the users' terms (**principle-model-the-objects**).
 4. Use tokens only. Every color, type, spacing, radius, and motion value is an existing token. A missing one becomes a proposed token in DTCG 2025.10 format, with `$value`, `$type`, and `$description`, aliasing existing tokens by curly-brace path (**principle-encode-decisions-in-the-system**).
 5. Design every state. Cover the interaction states in **principle-design-every-state** and, where it holds data, its data states. Add worst-case content, overflow, and reflow at 320 CSS px (SC 1.4.10, AA).

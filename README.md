@@ -20,21 +20,67 @@ claude plugin install mstack@mstack
 
 ## Use
 
-Start any rigorous design task with `/design-mode`:
+Restart Claude Code after installing so the skills and agents load. Then start any rigorous design task with `/mstack:design-mode` followed by the task:
 
 ```
-/design-mode our checkout drop-off is high on mobile. figure out why and propose a fix.
-```
-
-```
-/design-mode audit the settings page against WCAG 2.2 AA and give me the evidence.
+/mstack:design-mode our checkout drop-off is high on mobile. figure out why and propose a fix.
 ```
 
 ```
-/design-mode we need a date-range filter on the reports table. design it.
+/mstack:design-mode audit the settings page against WCAG 2.2 AA and give me the evidence.
+```
+
+```
+/mstack:design-mode we need a date-range filter on the reports table. design it.
 ```
 
 The router picks a playbook, opens a todo list with its steps, and runs the principles and skills each step needs. The reply names each principle that changed a decision and the heuristic, law, or WCAG criterion behind it.
+
+### Pick a playbook by task
+
+| Task | Playbook |
+|---|---|
+| A new problem space, not sure what to build | Discovery |
+| How does this page work, or why was it designed this way | Investigation |
+| Design a new flow | Feature design |
+| Try an idea you will throw away | Prototype |
+| Inspect a UI against heuristics | Heuristic review |
+| Prepare a test or interviews with real users | Usability test, Interview study |
+| Check accessibility | Accessibility audit |
+| Check for dark patterns | Deceptive pattern audit |
+| Fix a reported UX problem | UX defect fix |
+| Compare the built UI with the design | Design QA |
+| Hand the design to developers | Design handoff |
+
+The router lists all 19 playbooks. Naming one in your request works too.
+
+### Things to know
+
+- **No invented users.** When a task needs real users, such as a SUS score, the agent prepares the study kit for a human to run and records the gap as pending. It never makes up numbers. Send the raw answers back and it scores them.
+- **Taste and brand calls.** The agent picks a labeled default, keeps working, and hands you the evidence to decide later. It does not stop to ask mid-task.
+- **Other skills help when installed.** `impeccable`, `figma:*`, and `design:*` get the steps they fit. Without them the agent follows the playbook's own steps.
+- **Ask for a source directly.** A question like "what contrast does WCAG 2.2 require" or "how many users is enough" is answered by the `design-handbook` skill with its source, and common myths such as 7±2 are corrected.
+
+### Reading Figma files
+
+Paste a figma.com link into the task. design-mode reads the file through whichever Figma server is connected, and uses both when one read needs what each holds:
+
+- **Figma MCP** (Figma's official server) for deep reads of a few frames: screenshots, layout and styles for a spec, the variables a node uses, Code Connect, and design-system search.
+- **Figma Console MCP** (through its Desktop Bridge plugin) for file-wide reads: every variable and style, annotations, comments, version history, lint and audits, FigJam boards, and the current selection.
+
+Figma stays read-only unless you ask for a write. If neither server is connected, export the frames and attach them. The routing table is `skills/design-mode/references/figma.md`.
+
+### Scripts you can run yourself
+
+```bash
+python3 skills/design-mode/scripts/contrast.py "#767676" "#ffffff"
+```
+
+```bash
+python3 skills/design-mode/scripts/sus.py "5,1,5,1,5,1,5,1,5,1" "4,2,4,2,4,2,4,2,4,2"
+```
+
+`contrast.py` prints the WCAG contrast ratio and pass or fail for 1.4.3, 1.4.6, and 1.4.11. It accepts hex, `rgb()`, and `rgba()`. `sus.py` scores the System Usability Scale per respondent and prints the mean with a 95% interval against the 68 benchmark. Both have a `--self-test` flag.
 
 ## How it differs from pstack
 

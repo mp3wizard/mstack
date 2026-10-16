@@ -19,7 +19,7 @@ Name the surface: screens, a flow, a live URL, or Figma frames. Name the viewpor
 Capture the evidence before any reviewer runs. Reviewers judge files, not memories.
 
 - Live UI. Drive it with the built-in browser, the Playwright MCP, or the **run** skill. Screenshot each screen at 375, 768 and 1440 px wide, plus 320 px when reflow is in scope. Save a DOM and accessibility snapshot next to each screenshot.
-- Figma. Pull each frame with the Figma MCP screenshot tool. Read the Dev Mode spec for tokens and states if one exists.
+- Figma. Read each frame per ../design-mode/references/figma.md. Screenshot it with `get_screenshot` (Figma MCP) or `figma_take_screenshot` (Figma Console MCP). Read its design context, variables, and annotations for tokens and states.
 - States. Capture the screen states and the interaction states in **principle-design-every-state** that the flow reaches. Tab through once and screenshot the focus path.
 - Save everything to one evidence dir, `/tmp/critique-<slug>/`, with names that say screen, state and viewport.
 

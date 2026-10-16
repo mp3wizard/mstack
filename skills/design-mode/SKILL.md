@@ -19,6 +19,7 @@ Triggers:
 - About to `AskUserQuestion` on a "which layout", "which flow", or "which approach" fork → classify it first. If a prototype, an inspection, or a measurement could settle it, it is not the human's question. Run the Prototype playbook (`playbooks/prototype.md`) and let the result decide. Taste, brand, product strategy, and risk acceptance belong to the human. Proceed on a labeled default and record the call as an open decision with its evidence pack. `AskUserQuestion` blocks the turn, so use it at most once, as the last action, and never under a session override. In a read-only Investigation, answer from the evidence with a tradeoffs table instead of prototyping (**principle-propose-and-proceed**).
 - Any statement about users → **principle-never-fabricate-user-evidence**. Label its evidence tier.
 - Any screen, flow, or component → **principle-model-the-objects** first, then **principle-design-every-state**.
+- A figma.com link, or a step that reads a Figma file → `references/figma.md`. It routes each read to the Figma MCP or the Figma Console MCP, whichever is connected, and keeps Figma read-only unless the user asked for a write.
 - Choosing between designs → the **diverge** skill (**principle-diverge-then-converge**).
 - Contested or high-stakes design → the **critique** skill before handoff.
 - Any UI you produce or review → **principle-accessible-by-default**. Compute contrast with `scripts/contrast.py`. Never eyeball it.

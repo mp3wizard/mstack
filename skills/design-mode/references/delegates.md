@@ -8,6 +8,7 @@ This table names third-party skills and their known defects, so it goes stale. C
 |---|---|---|
 | Critique, polish, anti-slop detection, live iteration | `impeccable:impeccable` | A detector pass is evidence, not proof. |
 | Critique template, research plan and synthesis scaffolds, UX copy, handoff template | `design:design-critique`, `design:user-research`, `design:research-synthesis`, `design:ux-copy`, `design:design-handoff`, `design:design-system` | `design:accessibility-review` labels SC 2.5.5 as AA. It is AAA. Cite WCAG directly for levels. |
+| Read a Figma file: screenshots, layout, variables, styles, annotations, comments, versions, audits | The Figma MCP (`get_screenshot`, `get_design_context`, `get_variable_defs`) and the Figma Console MCP (`figma_get_variables`, `figma_get_annotations`, `figma_get_comments`) | Route each read with `references/figma.md`. `anthropic-skills:figma-mcp-router` is the authority when installed. |
 | Read or write Figma, Dev Mode specs, design to code, libraries, Code Connect | `figma:figma-use`, `figma:figma-spec`, `figma:figma-design-to-code`, `figma:figma-generate-library`, `figma:figma-code-connect` | Load `figma:figma-use` before any Figma write. |
 | Avoid the generic default look when generating UI | `frontend-design:frontend-design` | |
 | Code and Figma audit | `anthropic-skills:design-auditor` | License unknown. Use it, do not copy it. |

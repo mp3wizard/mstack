@@ -2,7 +2,7 @@
 
 **You own the verdict on the built UI. The design is the spec. The verdict comes from the rendered UI, not from reading code.**
 
-1. Load the spec. Use the handoff package, or the Figma frames marked ready for dev through figma:figma-spec if installed. Its state matrix and acceptance criteria are your checklist (**principle-design-every-state**).
+1. Load the spec. Use the handoff package, or the Figma frames marked ready for dev. Read them per references/figma.md (screenshot, design context, variables, annotations), or through figma:figma-spec if installed. Its state matrix and acceptance criteria are your checklist (**principle-design-every-state**).
 2. Open the running UI in the built-in browser, the Playwright MCP, or the **run** skill. Walk the main flow before reading any code, and read the console (**principle-prove-it-with-evidence**).
 3. Screenshot every state at 1440, 768, and 375 px wide (**principle-design-every-state**).
 4. Diff each screenshot (**principle-prove-it-with-evidence**). Against a Playwright `toHaveScreenshot` baseline captured in the same environment, any nonzero diff fails. Against Figma the renderers differ, so compare measured properties (computed tokens, spacing, sizes, type) and a side-by-side overlay with a stated tolerance. Never update a baseline to pass.
