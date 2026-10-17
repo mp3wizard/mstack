@@ -33,6 +33,7 @@ Triggers:
 - A design-producing playbook ends in Design handoff (`playbooks/design-handoff.md`). An evaluation playbook (investigation, heuristic review, usability test, interview study, accessibility audit, deceptive pattern audit, design QA, measure) ends in its own report, then pauses before the report leaves the session.
 - A playbook or principle step that is wrong or impossible → note it in the reply's open decisions with the file and line and a proposed fix. Do not silently work around it.
 - Long, autonomous, or step-away work → keep a decision trail with the **design-log** skill at `.mstack/<slug>/decisions.tsv`, re-read it before each step, use `/loop` or a scheduled wake for unattended runs, and stop at a stated predicate. Pause at the Always-pause list. An explicit pause goes to Pause safely (`playbooks/pause-safely.md`), and taking over earlier work goes to Session pickup (`playbooks/session-pickup.md`).
+- After a run that went wrong or taught something reusable, or when the user says "reflect" → the **design-reflect** skill.
 
 ## Evidence tiers
 
