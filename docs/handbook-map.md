@@ -141,7 +141,8 @@ Legend. **Replace**: a design playbook takes its slot. **Adapt**: same playbook,
 | shipping | Replace | Folded into `design-handoff` and `accessibility-audit` (WCAG-EM 2 conformance statement) | WCAG-EM 2 |
 | multi-phase-plan | Replace | `design-sprint` for a time-boxed sprint. pstack's multi-phase-plan otherwise. | GV Sprint |
 | babysit | Route | Use pstack. Design review rounds run through the `critique` skill. | |
-| autonomous-run, orchestrate, autopilot-full, autopilot-stack, session-pickup, pause-safely | Route | Use pstack's playbooks unchanged. | |
+| autonomous-run, orchestrate, autopilot-full, autopilot-stack | Route | Use pstack's playbooks unchanged. | |
+| session-pickup, pause-safely | Adapt | `session-pickup` and `pause-safely`: resume notes and decision logs under `.mstack/<slug>/`, Figma read-only, no outward action to pause | pstack |
 | authoring-a-skill, worktree-cleanup | Drop | Not design work. | |
 | (none) | New | `heuristic-review` | NN/g HE method and severity ratings, ISO 9241-110, Shneiderman, Norman |
 | (none) | New | `accessibility-audit` | WCAG 2.2, ACT Rules, APG, WCAG-EM 2, GOV.UK accessibility testing |
@@ -188,13 +189,17 @@ Legend. **Replace**: a design playbook takes its slot. **Adapt**: same playbook,
 | `how`, `why`, `teach` | `investigation` playbook |
 | `unslop` | Delegate to `impeccable` (anti-slop detector) plus the `ui-slop-sicko` agent |
 | `benchmark-checklist` | `principle-explain-the-metric` plus `scripts/sus.py` |
-| `show-me-your-work` | The evidence pack in `design-handoff` |
-| `reflect`, `correct` | `measure` playbook, maturity retro step |
+| `show-me-your-work` | `design-log`: the same append-only TSV with an evidence `tier` column, `log.sh`, a transcript audit, and a cross-model trail review. The evidence pack in `design-handoff` links it. |
+| `reflect` | `design-reflect`: three reviewers (judgment, process and tooling, divergent) and a synthesizer over the session, edits only after approval |
+| `correct` | `measure` playbook, maturity retro step |
+| `figure-it-out` | `bespoke-run` playbook |
+| `setup-pstack` | `setup-mstack`: per-role models and a budget in `~/.mstack/models.md`, using Claude Code's `Agent` model aliases |
+| `poteto-help` | `design-help` |
 | `poteto-agent` | `design-agent` |
 | `comment-sicko` | `ui-slop-sicko`: an independent hunter that sees only the rendered UI and hunts generic AI-UI tells and visual bugs |
 | none | `design-handbook`: reference skill holding the laws, heuristics, standards, numbers, and the license-tagged bibliography |
 
-Levers (scripts a reviewer can rerun): `scripts/contrast.py` computes the WCAG 2.x contrast ratio and checks it against 1.4.3, 1.4.6, and 1.4.11. `scripts/sus.py` scores the System Usability Scale. Both carry an `assert`-based `--self-test`.
+Levers (scripts a reviewer can rerun): `scripts/contrast.py` computes the WCAG 2.x contrast ratio and checks it against 1.4.3, 1.4.6, and 1.4.11. `scripts/sus.py` scores the System Usability Scale. `scripts/route.py` asks Jev to rank the playbooks for a task. `design-log/scripts/log.sh` appends decision rows with the spreadsheet-formula guard. Each carries a `--self-test`.
 
 ## Corrections the plugin must not repeat
 

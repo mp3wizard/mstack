@@ -59,14 +59,19 @@ The router picks a playbook, opens a todo list with its steps, and runs the prin
 | Fix a reported UX problem | UX defect fix |
 | Compare the built UI with the design | Design QA |
 | Hand the design to developers | Design handoff |
+| Stop now and resume later | Pause safely, then Session pickup |
+| Nothing above fits | Bespoke run |
 
-The router lists all 19 playbooks. Naming one in your request works too.
+The router lists all 22 playbooks. Naming one in your request works too.
+
+Not sure where to start? Type `/mstack:design-help` with your question. It answers with a prompt to send and the file the answer came from. The full walkthrough is the [guide](docs/guide/README.md).
 
 ### Things to know
 
 - **No invented users.** When a task needs real users, such as a SUS score, the agent prepares the study kit for a human to run and records the gap as pending. It never makes up numbers. Send the raw answers back and it scores them.
 - **Taste and brand calls.** The agent picks a labeled default, keeps working, and hands you the evidence to decide later. It does not stop to ask mid-task.
 - **Other skills help when installed.** `impeccable`, `figma:*`, and `design:*` get the steps they fit. Without them the agent follows the playbook's own steps.
+- **Long or step-away runs.** Ask for a decision log. The `design-log` skill keeps one row per decision at `.mstack/<slug>/decisions.tsv`, and Pause safely and Session pickup let a later session resume without redoing work.
 - **Ask for a source directly.** A question like "what contrast does WCAG 2.2 require" or "how many users is enough" is answered by the `design-handbook` skill with its source, and common myths such as 7±2 are corrected.
 
 ### Reading Figma files
@@ -119,13 +124,18 @@ The agent never fabricates users, quotes, or results. When tier 3 is needed, it 
 
 | Part | Contents |
 |---|---|
-| `skills/design-mode` | The router, 19 playbooks, and three scripts (`contrast.py`, `sus.py`, `route.py`) |
+| `skills/design-mode` | The router, 22 playbooks, and three scripts (`contrast.py`, `sus.py`, `route.py`) |
 | `skills/principle-*` | 22 design principles, each with its sources and license |
 | `skills/critique` | Multi-lens adversarial design review across models |
 | `skills/diverge` | N design variants, a cross-judge, and a graft into one |
 | `skills/design-handbook` | Reference: UX laws with their real scope, heuristics, WCAG 2.2, research numbers, process frameworks, design systems, ethics, AI features, content |
+| `skills/design-log` | Append-only decision log for long runs, with `log.sh` and a cross-model trail review |
+| `skills/design-reflect` | Retro: three reviewers and a synthesizer propose skill edits you approve |
+| `skills/setup-mstack` | Pick a model per role and a reasoning budget, written to `~/.mstack/models.md` |
+| `skills/design-help` | Answers questions about mstack with a prompt to send |
 | `agents/design-agent` | Delegate for playbook steps |
 | `agents/ui-slop-sicko` | Independent hunter that sees only the rendered UI |
+| `docs/guide/` | The user guide, ten pages from setup to recipes and pitfalls |
 | `docs/handbook-map.md` | Which handbooks replace pstack's, the full mapping, license tiers, and the folk claims the plugin corrects |
 | `docs/sources.md` | Every source the research used, with its license |
 

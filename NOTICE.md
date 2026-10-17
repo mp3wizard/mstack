@@ -2,7 +2,7 @@
 
 ## pstack
 
-mstack adapts the structure and method of pstack (router skill, playbooks copied into the todo list, principle leaf skills, the reply-writing rules, and the delegate and sicko agent shapes). pstack is distributed under this license:
+mstack adapts the structure and method of pstack (router skill, playbooks copied into the todo list, principle leaf skills, the reply-writing rules, and the delegate and sicko agent shapes). These parts adapt specific pstack files: the Session pickup and Pause safely playbooks, the Bespoke run playbook (from figure-it-out), design-log and its `log.sh` (from show-me-your-work), design-reflect and its reviewer prompts (from reflect), setup-mstack (from setup-pstack), design-help and its references (from poteto-help), and the shape of the user guide in `docs/guide/`. pstack is distributed under this license:
 
 ```
 MIT License

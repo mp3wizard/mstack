@@ -1,6 +1,6 @@
 {
   "name": "mstack",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "poteto's pstack method applied to the design process: a /design-mode router, SDLC-phase design playbooks, and design principles grounded in GOV.UK, WCAG 2.2, ISO 9241, NN/g, and DTCG, with evidence instead of opinion.",
   "author": {
     "name": "mp3wizard"
