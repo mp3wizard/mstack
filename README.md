@@ -99,7 +99,11 @@ python3 skills/design-mode/scripts/contrast.py "#767676" "#ffffff"
 python3 skills/design-mode/scripts/sus.py "5,1,5,1,5,1,5,1,5,1" "4,2,4,2,4,2,4,2,4,2"
 ```
 
-`contrast.py` prints the WCAG contrast ratio and pass or fail for 1.4.3, 1.4.6, and 1.4.11. It accepts hex, `rgb()`, and `rgba()`. `sus.py` scores the System Usability Scale per respondent and prints the mean with a 95% interval against the 68 benchmark. Both have a `--self-test` flag.
+```bash
+python3 skills/design-mode/scripts/route.py --task "why do people abandon the signup form"
+```
+
+`contrast.py` prints the WCAG contrast ratio and pass or fail for 1.4.3, 1.4.6, and 1.4.11. It accepts hex, `rgb()`, and `rgba()`. `sus.py` scores the System Usability Scale per respondent and prints the mean with a 95% interval against the 68 benchmark. `route.py` asks Jev which playbook fits a task and names one only when it clearly leads. It needs `jev` (see above). All three have a `--self-test` flag.
 
 ## How it differs from pstack
 
@@ -115,7 +119,7 @@ The agent never fabricates users, quotes, or results. When tier 3 is needed, it 
 
 | Part | Contents |
 |---|---|
-| `skills/design-mode` | The router, 19 playbooks, and two scripts (`contrast.py`, `sus.py`) |
+| `skills/design-mode` | The router, 19 playbooks, and three scripts (`contrast.py`, `sus.py`, `route.py`) |
 | `skills/principle-*` | 22 design principles, each with its sources and license |
 | `skills/critique` | Multi-lens adversarial design review across models |
 | `skills/diverge` | N design variants, a cross-judge, and a graft into one |
