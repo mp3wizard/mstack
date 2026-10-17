@@ -116,6 +116,8 @@ Before routing a step, check your available skills and agents. Use a delegate wh
 
 **Defaults for every `Agent` call.** `run_in_background: true` for fan-outs, file pointers instead of inlined context, and a separate scratch directory per variant so no two agents write the same file. Pick the model by role with the `model` aliases: `opus` for judgment, critique leads, and synthesis; `sonnet` for producing variants, kits, and specs; `haiku` for mechanical batches such as screenshot sweeps. Omit `model` to inherit the session model.
 
+**User model config.** If `~/.mstack/models.md` exists, read it once per session. Its `delegates`, `judgment`, and `mechanical` lines replace the three defaults above, and `inherit` means omit `model`. Its `budget` line sets the Agent tool's `effort` (`max` or `high`; nothing for `standard` or `lean`). A missing line keeps the default. If the Agent tool rejects a configured value, use the default and say so. The **setup-mstack** skill writes the file.
+
 You own every subagent's work. Read its artifacts and screenshots and write your own summary. Never pass through what it said. Give new work to a fresh subagent with the consolidated brief.
 
 Route bulk to subagents: research text, screenshot sweeps, long design files. Keep summaries in the main thread.

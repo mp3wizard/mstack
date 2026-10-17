@@ -27,7 +27,7 @@ Every variant gets the same brief, so the brief is the contract.
 
 Spawn all N in a single message with the Agent tool, `subagent_type: "mstack:design-agent"`. Each gets the absolute path of design-mode's SKILL.md (`../design-mode/SKILL.md` from this skill's base directory), the brief, its direction, its output dir, and the grounding files by path. Each returns the artifact, a screenshot of every state at each viewport, and a short rationale naming the alternatives it considered and rejected.
 
-Mix `opus` and `sonnet` when the call is judgment-heavy. One model N times is fine when the work is generation-bound. Each variant may use **frontend-design:frontend-design** for its token plan and build, if installed.
+Mix `opus` and `sonnet` when the call is judgment-heavy. One model N times is fine when the work is generation-bound. If `~/.mstack/models.md` has a `diverge variants` line, cycle through its entries for the N variants instead, use its `judgment` line for the judge's fallback model in Phase C, and let its `budget` line set `effort` for the variant and judge calls (**setup-mstack** writes the file). Phase C's rule wins over the config: if the configured judgment model built most variants, judge on the other model instead and say so. Each variant may use **frontend-design:frontend-design** for its token plan and build, if installed.
 
 If `mstack:design-agent` fails to spawn, use `general-purpose` with the same prompt plus an instruction to read design-mode's SKILL.md first, and say so. If a variant produces nothing, continue with N-1 and note the dropout.
 

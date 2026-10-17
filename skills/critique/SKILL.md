@@ -49,7 +49,7 @@ Seat G is the only seat on a different model family. Opus and sonnet are one fam
 
 Copy design-mode's contrast script (`../design-mode/scripts/contrast.py` from this skill's base directory) into the evidence dir, so every seat, seat G included, can reach it. Fill `references/reviewer-prompt.md` for each seat with the intent, the evidence paths, the gaps, that seat's lens section, the absolute path of that copy, and the absolute path of `../design-handbook/references/heuristics.md` for the severity scale. Pass paths, not pasted images. Tell each seat not to edit files.
 
-If the Agent tool rejects a model, run that seat on the parent model and say so. If six seats cost too much, merge into three: heuristics with cognition, accessibility with conventions, content with ethics. Keep at least two models. Say which lenses merged.
+If `~/.mstack/models.md` has a `critique seats` line, its six entries replace the Model column for seats A to F in order, and its `budget` line sets `effort`, per the **setup-mstack** skill. If the Agent tool rejects a model, run that seat on the parent model and say so. If six seats cost too much, merge into three: heuristics with cognition, accessibility with conventions, content with ethics. Keep at least two models. Say which lenses merged.
 
 Delegates, when installed, run as extra seats. Treat each as one more reviewer, never as the verdict.
 
