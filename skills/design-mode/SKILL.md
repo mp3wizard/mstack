@@ -136,7 +136,7 @@ Every playbook ends with a reply written this way. Each playbook's own reply lin
 
 Open a todo list whose first items are the matched playbook's steps, copied in verbatim, before any task-specific todos. A step you choose not to do stays in the list with a one-line `skip: <reason>`. Open the full steps at the path given.
 
-A program spanning many playbooks over days, or a team design sprint, routes to the Design sprint playbook. When no playbook fits, compose the nearest playbooks and say which.
+A program spanning many playbooks over days, or a team design sprint, routes to the Design sprint playbook. When no playbook fits, or composing two leaves gaps, route to Bespoke run (`playbooks/bespoke-run.md`). It reuses the nearest playbooks' steps and designs only the gaps.
 
 **Discover and define**
 
@@ -174,6 +174,12 @@ A program spanning many playbooks over days, or a team design sprint, routes to 
 - **Design handoff** (`playbooks/design-handoff.md`). Invoked at the end of every design-producing playbook.
 - **Design QA** (`playbooks/design-qa.md`). Built UI against the design, by pixel diff and live inspection.
 - **Measure** (`playbooks/measure.md`). Metrics plan before build, readout after launch, and a maturity retro.
+
+**Plan, pause, and resume**
+
+- **Bespoke run** (`playbooks/bespoke-run.md`). No playbook fits. Design an auditable sequence of phases, then run it.
+- **Pause safely** (`playbooks/pause-safely.md`). An explicit pause, going offline, a restart, or imminent compaction. Leave a resume note a cold-start session can use.
+- **Session pickup** (`playbooks/session-pickup.md`). Taking over design work from a prior session's resume note, decision log, transcript, or branch.
 
 ## Scripts
 

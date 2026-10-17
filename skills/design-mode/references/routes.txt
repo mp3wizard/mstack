@@ -17,3 +17,6 @@ design-system-refactor | The user wants the design system cleaned up: inconsiste
 design-handoff | The user wants a finished design packaged and specified for developers to build.
 design-qa | The user wants the built product compared against the design to find visual and behavior mismatches.
 measure | The user wants to define success metrics before building, or read the results after launch.
+bespoke-run | The user has a large or unusual design task that fits none of the other playbooks and needs a custom plan of phases, such as a cross-product redesign or a long unattended run.
+pause-safely | The user wants to stop or pause the current design work cleanly so it can be resumed later.
+session-pickup | The user wants to resume or take over design work that an earlier session or another agent started.

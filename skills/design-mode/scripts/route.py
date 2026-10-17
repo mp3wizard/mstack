@@ -65,7 +65,7 @@ def decide(ranked, errors=()):
 
 def self_test():
     routes = load_routes(ROUTES.read_text())
-    assert len(routes) >= 19, "every playbook has an intent line"
+    assert len(routes) >= 22, "every playbook has an intent line"
     out = "0.56\tusability-test | x\n0.18\tmeasure | y\nERR\tprototype | z\n"
     ranked, errs = parse_rank(out)
     assert ranked[0] == ("usability-test", 0.56) and errs == ["prototype"], "parse scores and ERR"
